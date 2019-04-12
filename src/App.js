@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import LoaderImage from './loader-image.js';
 import './App.css';
 
 class App extends Component {
+  state = {
+    imageSrc: ''
+  }
+
+  componentDidMount() {
+    const url = 'http://www.4usky.com/data/out/22/164176723-cosmos-wallpapers.jpg';
+
+    fetch(url).then(
+      response => response.json()
+    ).then(
+      data => {
+        let imageSrc = data;
+
+        console.log(imageSrc)
+      }
+    )
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <LoaderImage />
       </div>
     );
   }
