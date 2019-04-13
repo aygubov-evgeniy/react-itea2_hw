@@ -31,3 +31,19 @@
     transform: rotate(360deg);
   }
 }
+
+img{
+  max-width: 100%;
+}
+.gallery{
+  width: 800px;
+  margin: auto;
+  display: flex;
+  min-height: 100vh;
+}
+.gallery-item{
+  margin: auto;
+}
+.gallery-item_hidden{
+  display: none;
+}
