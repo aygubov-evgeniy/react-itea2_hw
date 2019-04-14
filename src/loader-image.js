@@ -26,7 +26,14 @@ class LoaderImage extends Component {
           <img src={imageSrc} onLoad={renderImage} />
         </div>
 
-        {!isImageLoaded ? <p>Loading</p> : null}
+        {!isImageLoaded ? 
+        (
+          <div className="cssload-loader">
+            <div className="cssload-inner cssload-one"></div>
+            <div className="cssload-inner cssload-two"></div>
+            <div className="cssload-inner cssload-three"></div>
+          </div>
+        ) : null}
       </div>
     );
   }
